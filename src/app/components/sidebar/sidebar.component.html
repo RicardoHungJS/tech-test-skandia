@@ -1,0 +1,20 @@
+<div class="sidebar">
+  @for (option of sideBarOptions; track $index) {
+  <div
+    class="sidebar__option"
+    (click)="redirectTo(option.route)"
+    (mouseenter)="hoverColorChange($index)"
+    (mouseleave)="hoverColorChange(null)"
+  >
+    <div class="sidebar__icon-container">
+      <div class="sidebar__icon-box">
+        <app-icons
+          [iconName]="option.iconName"
+          [iconTheme]="hoverId === $index ? 'white' : 'gray'"
+        ></app-icons>
+      </div>
+    </div>
+    <p class="sidebar__option-text">{{ option.name }}</p>
+  </div>
+  }
+</div>

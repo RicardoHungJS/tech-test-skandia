@@ -1,0 +1,10 @@
+@use '../assets/styles/general-styles.scss' as gs;
+
+.main {
+  @include gs.doNotCopyTexts();
+  width: 100vw;
+  min-height: 80vh;
+  padding-top: 80px;
+  overflow: hidden;
+  overflow-y: auto;
+}

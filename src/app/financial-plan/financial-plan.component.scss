@@ -1,0 +1,263 @@
+@use '../../assets/styles/general-styles.scss' as gs;
+
+.financial-plan {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-left: 4rem;
+
+  .financial-plan__starry-sky-bg-box {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24rem;
+    overflow: hidden;
+
+    .financial-plan__bg-stars {
+      width: 100%;
+    }
+  }
+
+  .financial-plan__bg-img {
+    position: absolute;
+    width: 100%;
+    top: -8rem;
+    left: 0;
+  }
+
+  .financial-plan__go-home-section {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 5rem;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    padding: 0 10rem;
+
+    .financial-plan__go-home-button {
+      @include gs.basicFontStyles(gs.$font-size-sm, gs.$verdana, bold, gs.$white);
+      cursor: pointer;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: none;
+      outline: none;
+      border: none;
+
+      .financial-plan__go-home-icon-box {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+
+  .financial-plan__titles-box {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .financial-plan__title {
+      @include gs.basicFontStyles(gs.$font-size-lg, gs.$montserrat, bold, gs.$white);
+      margin: 1rem;
+      padding: 0;
+    }
+
+    .financial-plan__subtitle {
+      @include gs.basicFontStyles(gs.$font-size-base, gs.$verdana, 400, gs.$white);
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .financial-plan__info-card-box {
+    @include gs.simpleShadows();
+    position: relative;
+    z-index: 3;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34%;
+    height: 20rem;
+    background-color: gs.$white;
+    border-radius: 0.4rem;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .financial-plan__mountains-bg {
+      position: absolute;
+      z-index: 4;
+      bottom: 0;
+      right: 0;
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+
+    .financial-plan__info-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+
+      .financial-plan__info-names {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+
+        .financial-plan__name {
+          @include gs.basicFontStyles(gs.$font-size-base, gs.$montserrat, bold);
+        }
+
+        .financial-plan__category {
+          @include gs.basicFontStyles(gs.$font-size-sm, gs.$verdana, bold);
+        }
+      }
+
+      .financial-plan__watch-plan-anchrod {
+        @include gs.basicFontStyles(gs.$font-size-base, gs.$montserrat, bold, gs.$skadiaGreen);
+      }
+    }
+
+    .financial-plan__data-box {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .financial-plan__plan-data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+
+        .financial-plan__data-label {
+          @include gs.basicFontStyles(gs.$font-size-sm, gs.$verdana, 600);
+          height: 1rem;
+          display: flex;
+          align-items: center;
+          justify-items: center;
+          gap: 0.4rem;
+
+          .financial-plan__label-star-icon {
+            height: 100%;
+            aspect-ratio: 1/1
+          }
+        }
+
+        .financial-plan__data {
+          @include gs.basicFontStyles(gs.$font-size-sm, gs.$montserrat, bold);
+          min-width: 10rem;
+          padding: 0.4rem 1rem;
+          border-radius: 0.4rem;
+          text-align: center;
+        }
+      }
+    }
+
+    .financial-plan__associatte-goals-anchrod {
+      @include gs.basicFontStyles(gs.$font-size-base, gs.$montserrat, bold, gs.$skadiaGreen);
+      height: gs.$font-size-base;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      .financial-plan__label-ok-icon {
+        height: 100%;
+      }
+    }
+  }
+
+  .financial-plan__texts-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 25rem;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      @include gs.basicFontStyles(gs.$font-size-lg, gs.$montserrat, 600);
+      margin: 1rem;
+      padding: 0;
+
+      span {
+        @include gs.basicFontStyles(gs.$font-size-lg, gs.$montserrat, 600, gs.$skadiaOrange);
+      }
+    }
+
+    p {
+      @include gs.basicFontStyles(gs.$font-size-base, gs.$verdana, 500);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      line-height: 1.8rem;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .financial-plan__cards-carousel-section {
+    position: relative;
+    width: 100%;
+    min-height: 35rem;
+    background-color: white;
+    padding: 0 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .financial-plan__carousel-sizing-box {
+      position: relative;
+      top: -9rem;
+      width: 70%;
+    }
+
+    .financial-plan__associate-goal-button {
+      @include gs.basicFontStyles(gs.$font-size-base, gs.$montserrat, bold);
+      cursor: pointer;
+      position: relative;
+      top: -5rem;
+      width: 20rem;
+      height: 4rem;
+      background-color: gs.$gray;
+      outline: none;
+      border: none;
+      border-radius: 15rem;
+    }
+  }
+}
+
+@mixin carouselColorsConfig() {
+  color: gs.$white;
+  border-color: transparent;
+  background: gs.$skadiaGreen;
+}
+
+:host ::ng-deep {
+  .p-carousel-next:hover {
+    @include carouselColorsConfig()
+  }
+
+  .p-carousel-prev:hover {
+    @include carouselColorsConfig()
+  }
+}

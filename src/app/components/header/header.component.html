@@ -1,0 +1,44 @@
+<header class="header">
+  <div class="header__section-title">
+    <div class="header__icon-box">
+      <app-icons iconName="skandia"></app-icons>
+    </div>
+    <p class="header__title">Plan Financiero Digital - FPX</p>
+  </div>
+  <nav class="header__nav">
+    <ul>
+      <li class="header__list-item-icon">
+        <a href="#">
+          <div class="header__anchord-icon-box">
+            <app-icons iconName="happy"></app-icons>
+          </div>
+          <p>Tu Financial Planner</p>
+        </a>
+      </li>
+      <li class="header__list-item-icon">
+        <a href="#">
+          <div class="header__anchord-icon-box">
+            <app-icons iconName="handCoin"></app-icons>
+          </div>
+          <p>Aportes</p>
+        </a>
+      </li>
+      <li class="header__list-item-icon-hover">
+        <a href="#">
+          <div class="header__anchord-icon-box">
+            <app-icons
+              iconName="questionMark"
+              style="height: 100%; aspect-ratio: 1/1"
+            ></app-icons>
+          </div>
+          <p>Preguntas frecuentes</p>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <button class="header__hamburguerButton">
+    @for (item of [1,2,3]; track $index) {
+    <div class="header__hamburguer-slice"></div>
+    }
+  </button>
+</header>

@@ -1,0 +1,29 @@
+<div class="info-card">
+  <div class="info-card__checkbox-box">
+    <input type="checkbox" />
+  </div>
+  <div class="info-card__names-box">
+    <p class="info-card__product-name">{{ cardData.nameProduct }}</p>
+    <p class="info-card__product-code">{{ "#" + cardData.numberProduct }}</p>
+  </div>
+  <div class="info-card__prices-box">
+    <p class="info-card__product-name">Ya cuentas con:</p>
+    <p class="info-card__product-price">
+      ${{
+        (+cardData.balanceProduct).toLocaleString("es-CO", {
+          minimumFractionDigits: 0
+        })
+      }}
+    </p>
+  </div>
+  <div class="info-card__goal-description-box">
+    <div class="info-card__goal-icon-box">
+      <app-icons [iconName]="'happy'"></app-icons>
+    </div>
+    <p>{{ cardData.detaildProduct }}</p>
+  </div>
+  <div
+    class="info-card__bottom-details"
+    [ngStyle]="{ 'background-color': colorAleatorio }"
+  ></div>
+</div>

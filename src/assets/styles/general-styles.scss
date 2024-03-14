@@ -1,0 +1,101 @@
+/* -------------------------------------------------------------------------- */
+/*                                   COLORS                                   */
+/* -------------------------------------------------------------------------- */
+
+$black: #3F3F3F;
+$blackDarker: #363636;
+$white: #FFFFFF;
+$shadowGray: #00000029;
+$gray: #E2E2E2;
+$lightGray: #EDEDED;
+
+$skadiaGreen: #00C83C;
+$skadiaOrange: #FE9200;
+
+$darkBlue: #63AABC;
+$lightBlue: #A5D7E1;
+$lightYellow: #FECD72;
+$lightGreen: #A4D071;
+$salmon: #FF9460;
+$mint: #95DBB7;
+
+/* -------------------------------------------------------------------------- */
+/*                                    FONTS                                   */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Verdana';
+  src: url('../fonts/verdana.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+$montserrat: 'Montserrat', sans-serif;
+$verdana: 'Verdana', sans-serif;
+
+$font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+$font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+$font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+$font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+$font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+$font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+$font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+@mixin basicFontStyles($size, $family, $weight, $color: $black) {
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+  color: $color;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 MEDIA QUERY                                */
+/* -------------------------------------------------------------------------- */
+
+@mixin stylesBasedOnSize($size) {
+  @if $size =="small" {
+    @media (max-width: 426px) {
+      @content;
+    }
+  }
+
+  @else if $size =="medium" {
+    @media (min-width: 426px) and (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @else if $size =="large" {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+
+  @else {
+    @content;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           mixin to not copy texts                          */
+/* -------------------------------------------------------------------------- */
+
+@mixin doNotCopyTexts {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   SHADOWS                                  */
+/* -------------------------------------------------------------------------- */
+
+@mixin simpleShadows() {
+  -webkit-box-shadow: 0px 3px 11px -3px $shadowGray;
+  -moz-box-shadow: 0px 3px 11px -3px $shadowGray;
+  box-shadow: 0px 3px 11px -3px $shadowGray;
+}

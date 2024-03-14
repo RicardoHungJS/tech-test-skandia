@@ -1,0 +1,55 @@
+@use '../../../assets/styles/general-styles.scss' as gs;
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  height: calc(100vh - 80px);
+  width: 4rem;
+  padding: 0;
+  background: gs.$gray;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  z-index: 10;
+
+  &:hover {
+    width: 16rem;
+  }
+
+  .sidebar__option {
+    cursor: pointer;
+    width: 16rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+
+    &:hover {
+      background-color: gs.$skadiaGreen;
+
+      .sidebar__option-text {
+        @include gs.basicFontStyles(gs.$font-size-base, gs.$montserrat, 500, gs.$white);
+      }
+    }
+
+    .sidebar__icon-container {
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .sidebar__icon-box {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    .sidebar__option-text {
+      @include gs.basicFontStyles(gs.$font-size-base, gs.$montserrat, 500);
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+}

@@ -1,0 +1,102 @@
+<div class="financial-plan">
+  <div class="financial-plan__starry-sky-bg-box">
+    <img
+      class="financial-plan__bg-stars"
+      src="../../assets/images/milky-way.webp"
+      alt="milky way image"
+    />
+  </div>
+  <img
+    class="financial-plan__bg-img"
+    src="../../assets/images/iStock-480003814_2x.webp"
+    alt="background img"
+  />
+  <section class="financial-plan__go-home-section">
+    <button class="financial-plan__go-home-button">
+      <div class="financial-plan__go-home-icon-box">
+        <app-icons iconName="backHome"></app-icons>
+      </div>
+      Ir al inicio
+    </button>
+  </section>
+  <section class="financial-plan__titles-box">
+    <h2 class="financial-plan__title">
+      ¡Tu objetivo ha sido agregado exitosamente!
+    </h2>
+    <p class="financial-plan__subtitle">
+      ¡Te hemos enviado un correo con la notificación!
+    </p>
+  </section>
+  <section class="financial-plan__info-card-box">
+    <img
+      class="financial-plan__mountains-bg"
+      src="../../assets/images/mountains.webp"
+      alt="mountains image"
+    />
+    <section class="financial-plan__info-header">
+      <div class="financial-plan__info-names">
+        <p class="financial-plan__name">Conocer mi sobrino</p>
+        <p class="financial-plan__category">Categoría: Bienestar</p>
+      </div>
+      <a class="financial-plan__watch-plan-anchrod" href="#"
+        >Revisar objetivo</a
+      >
+    </section>
+    <section class="financial-plan__data-box">
+      @for (data of financialData; track $index) {
+      <div class="financial-plan__plan-data">
+        <div class="financial-plan__data-label">
+          @if (data.starIcon) {
+          <div class="financial-plan__label-star-icon">
+            <app-icons [iconName]="'star'"></app-icons>
+          </div>
+          }
+          {{ data.labelText }}
+        </div>
+        <p
+          class="financial-plan__data"
+          [style]="{ 'background-color': data.color }"
+        >
+          {{ data.data }}
+        </p>
+      </div>
+      }
+    </section>
+    <a class="financial-plan__associatte-goals-anchrod" href="#">
+      <div class="financial-plan__label-ok-icon">
+        <app-icons [iconName]="'ok'"></app-icons>
+      </div>
+      ¡Asocia productos para monitorear su progreso!</a
+    >
+  </section>
+  <section class="financial-plan__texts-container">
+    <h3>
+      ¡Vamos por esos <span>$6.000.000</span> para
+      <span>Conocer mi sobrino</span>!
+    </h3>
+    <p>
+      ¡A través de tus productos y nuestros rendimientos podremos lograrlo!
+      <br />
+      <span>Asocia tus productos o adquiere uno nuevo.</span>
+    </p>
+  </section>
+  <section class="financial-plan__cards-carousel-section">
+    <div class="financial-plan__carousel-sizing-box">
+      <p-carousel
+        [value]="cardsData"
+        [responsiveOptions]="responsiveOptions"
+        [numVisible]="3"
+        [numScroll]="1"
+        [circular]="false"
+        [showIndicators]="false"
+      >
+        <ng-template let-product pTemplate="item">
+          <app-info-card [cardData]="product"></app-info-card>
+        </ng-template>
+      </p-carousel>
+    </div>
+    <button class="financial-plan__associate-goal-button">
+      ASOCIAR A OBJETIVO
+    </button>
+  </section>
+</div>
